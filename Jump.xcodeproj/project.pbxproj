@@ -15,6 +15,14 @@
 		9AD340AF27E4F634007AF6CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340AD27E4F634007AF6CD /* Main.storyboard */; };
 		9AD340B127E4F635007AF6CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340B027E4F635007AF6CD /* Assets.xcassets */; };
 		9AD340B427E4F635007AF6CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340B227E4F635007AF6CD /* LaunchScreen.storyboard */; };
+		9AD340C827E4F7D6007AF6CD /* rimouski sb.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C027E4F7D6007AF6CD /* rimouski sb.otf */; };
+		9AD340C927E4F7D6007AF6CD /* wheaton capitals.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C127E4F7D6007AF6CD /* wheaton capitals.otf */; };
+		9AD340CA27E4F7D6007AF6CD /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C327E4F7D6007AF6CD /* jump.wav */; };
+		9AD340CB27E4F7D6007AF6CD /* superScore.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C427E4F7D6007AF6CD /* superScore.wav */; };
+		9AD340CC27E4F7D6007AF6CD /* collision.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C527E4F7D6007AF6CD /* collision.wav */; };
+		9AD340CD27E4F7D6007AF6CD /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C627E4F7D6007AF6CD /* btn.wav */; };
+		9AD340CE27E4F7D6007AF6CD /* score.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340C727E4F7D6007AF6CD /* score.wav */; };
+		9AD340D227E654B2007AF6CD /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340D127E654B2007AF6CD /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,15 @@
 		9AD340AE27E4F634007AF6CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AD340B027E4F635007AF6CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AD340B327E4F635007AF6CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AD340C027E4F7D6007AF6CD /* rimouski sb.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rimouski sb.otf"; sourceTree = "<group>"; };
+		9AD340C127E4F7D6007AF6CD /* wheaton capitals.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wheaton capitals.otf"; sourceTree = "<group>"; };
+		9AD340C327E4F7D6007AF6CD /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		9AD340C427E4F7D6007AF6CD /* superScore.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = superScore.wav; sourceTree = "<group>"; };
+		9AD340C527E4F7D6007AF6CD /* collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = collision.wav; sourceTree = "<group>"; };
+		9AD340C627E4F7D6007AF6CD /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
+		9AD340C727E4F7D6007AF6CD /* score.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = score.wav; sourceTree = "<group>"; };
+		9AD340CF27E4F86A007AF6CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AD340D127E654B2007AF6CD /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,16 +76,91 @@
 		9AD340A227E4F634007AF6CD /* Jump */ = {
 			isa = PBXGroup;
 			children = (
-				9AD340A327E4F634007AF6CD /* AppDelegate.swift */,
+				9AD340BA27E4F65F007AF6CD /* Delegates */,
 				9AD340A527E4F634007AF6CD /* GameScene.sks */,
 				9AD340A727E4F634007AF6CD /* Actions.sks */,
-				9AD340A927E4F634007AF6CD /* GameScene.swift */,
-				9AD340AB27E4F634007AF6CD /* GameViewController.swift */,
-				9AD340AD27E4F634007AF6CD /* Main.storyboard */,
-				9AD340B027E4F635007AF6CD /* Assets.xcassets */,
-				9AD340B227E4F635007AF6CD /* LaunchScreen.storyboard */,
+				9AD340D027E6548A007AF6CD /* Nodes */,
+				9AD340BB27E4F66F007AF6CD /* Scenes */,
+				9AD340BC27E4F67E007AF6CD /* Controllers */,
+				9AD340BD27E4F6A1007AF6CD /* Mains */,
+				9AD340BE27E4F6AE007AF6CD /* Resources */,
 			);
 			path = Jump;
+			sourceTree = "<group>";
+		};
+		9AD340BA27E4F65F007AF6CD /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340A327E4F634007AF6CD /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		9AD340BB27E4F66F007AF6CD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340A927E4F634007AF6CD /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9AD340BC27E4F67E007AF6CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340AB27E4F634007AF6CD /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9AD340BD27E4F6A1007AF6CD /* Mains */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340AD27E4F634007AF6CD /* Main.storyboard */,
+				9AD340B227E4F635007AF6CD /* LaunchScreen.storyboard */,
+			);
+			path = Mains;
+			sourceTree = "<group>";
+		};
+		9AD340BE27E4F6AE007AF6CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340CF27E4F86A007AF6CD /* Info.plist */,
+				9AD340BF27E4F7D6007AF6CD /* Fonts */,
+				9AD340C227E4F7D6007AF6CD /* Sounds */,
+				9AD340B027E4F635007AF6CD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9AD340BF27E4F7D6007AF6CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340C027E4F7D6007AF6CD /* rimouski sb.otf */,
+				9AD340C127E4F7D6007AF6CD /* wheaton capitals.otf */,
+			);
+			name = Fonts;
+			path = "jump-master/Fonts";
+			sourceTree = SOURCE_ROOT;
+		};
+		9AD340C227E4F7D6007AF6CD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340C327E4F7D6007AF6CD /* jump.wav */,
+				9AD340C427E4F7D6007AF6CD /* superScore.wav */,
+				9AD340C527E4F7D6007AF6CD /* collision.wav */,
+				9AD340C627E4F7D6007AF6CD /* btn.wav */,
+				9AD340C727E4F7D6007AF6CD /* score.wav */,
+			);
+			name = Sounds;
+			path = "jump-master/Sounds";
+			sourceTree = SOURCE_ROOT;
+		};
+		9AD340D027E6548A007AF6CD /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				9AD340D127E654B2007AF6CD /* PlayerNode.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,11 +221,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD340CA27E4F7D6007AF6CD /* jump.wav in Resources */,
+				9AD340CE27E4F7D6007AF6CD /* score.wav in Resources */,
+				9AD340C827E4F7D6007AF6CD /* rimouski sb.otf in Resources */,
 				9AD340AF27E4F634007AF6CD /* Main.storyboard in Resources */,
+				9AD340CB27E4F7D6007AF6CD /* superScore.wav in Resources */,
 				9AD340A627E4F634007AF6CD /* GameScene.sks in Resources */,
+				9AD340CD27E4F7D6007AF6CD /* btn.wav in Resources */,
 				9AD340B127E4F635007AF6CD /* Assets.xcassets in Resources */,
 				9AD340B427E4F635007AF6CD /* LaunchScreen.storyboard in Resources */,
+				9AD340C927E4F7D6007AF6CD /* wheaton capitals.otf in Resources */,
 				9AD340A827E4F634007AF6CD /* Actions.sks in Resources */,
+				9AD340CC27E4F7D6007AF6CD /* collision.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +245,7 @@
 			files = (
 				9AD340AA27E4F634007AF6CD /* GameScene.swift in Sources */,
 				9AD340AC27E4F634007AF6CD /* GameViewController.swift in Sources */,
+				9AD340D227E654B2007AF6CD /* PlayerNode.swift in Sources */,
 				9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +395,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UV2PAA368V;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Jump/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,12 +427,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UV2PAA368V;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Jump/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
