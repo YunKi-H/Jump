@@ -44,5 +44,12 @@ extension PlayerNode {
         player.physicsBody?.allowsRotation = false
         player.physicsBody?.affectedByGravity = true
         player.physicsBody?.usesPreciseCollisionDetection = true
+        player.physicsBody?.restitution = 0.0
+        player.physicsBody?.friction = 10.0
+        player.physicsBody?.mass = 10.0
+        player.physicsBody?.categoryBitMask = 0
+        player.physicsBody?.contactTestBitMask = 0
+        player.physicsBody?.collisionBitMask = 0
+        addChild(player)
     }
 }
