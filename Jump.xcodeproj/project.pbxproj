@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A96030627ED50560031B164 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96030527ED50560031B164 /* UIColor+Ext.swift */; };
 		9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340A327E4F634007AF6CD /* AppDelegate.swift */; };
 		9AD340A627E4F634007AF6CD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A527E4F634007AF6CD /* GameScene.sks */; };
 		9AD340A827E4F634007AF6CD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A727E4F634007AF6CD /* Actions.sks */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A96030527ED50560031B164 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		9AD340A027E4F634007AF6CD /* Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD340A327E4F634007AF6CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD340A527E4F634007AF6CD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A96030427ED502D0031B164 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A96030527ED50560031B164 /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9AD3409727E4F634007AF6CD = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 				9AD340BA27E4F65F007AF6CD /* Delegates */,
 				9AD340A527E4F634007AF6CD /* GameScene.sks */,
 				9AD340A727E4F634007AF6CD /* Actions.sks */,
+				9A96030427ED502D0031B164 /* Extensions */,
 				9AD340D027E6548A007AF6CD /* Nodes */,
 				9AD340BB27E4F66F007AF6CD /* Scenes */,
 				9AD340BC27E4F67E007AF6CD /* Controllers */,
@@ -245,6 +256,7 @@
 			files = (
 				9AD340AA27E4F634007AF6CD /* GameScene.swift in Sources */,
 				9AD340AC27E4F634007AF6CD /* GameViewController.swift in Sources */,
+				9A96030627ED50560031B164 /* UIColor+Ext.swift in Sources */,
 				9AD340D227E654B2007AF6CD /* PlayerNode.swift in Sources */,
 				9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */,
 			);
