@@ -11,10 +11,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var isAllIPad = false
+    var isIPadPro = false
+    var isIPad11 = false
+    var isIPad12 = false
+    var isIPad = false
+    
+    var isIPhoneX = false
+    var isIPhonePlus = false
+    var isIPhone = false
+    var isIPhone5 = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupDevice()
         return true
     }
 
@@ -35,6 +47,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-
+    func setupDevice() {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            isAllIPad = true
+            
+            switch UIScreen.main.nativeBounds.height {
+            case 2388: isIPad11 = true; break
+            case 2732: isIPad12 = true; break
+            default: isIPadPro = true; break
+            }
+            
+            if isIPad12 || isIPadPro {
+                isIPad = true
+            }
+        case .phone:
+            switch UIScreen.main.nativeBounds.height {
+            case 2688, 1792, 2436, 2778: isIPhoneX = true; break
+            case 1920, 2208: isIPhonePlus = true; break
+            case 1334: isIPhone = true; break
+            case 1136: isIPhone5 = true; break
+            default: isIPhoneX = true; break;
+            }
+        case .tv: break
+        default: break
+        }
+    }
 }
 

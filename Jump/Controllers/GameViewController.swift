@@ -13,12 +13,11 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let view = self.view as? SKView else {
             return
         }
         
-        let scene = GameScene(size: CGSize(width: 1536, height: 2048))
+        let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
         scene.scaleMode = .aspectFill
         
         view.ignoresSiblingOrder = true

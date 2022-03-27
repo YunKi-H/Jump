@@ -15,6 +15,9 @@
 		9A96032C27EEB17F0031B164 /* score.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9A96032427EEB17F0031B164 /* score.wav */; };
 		9A96032D27EEB17F0031B164 /* rimouski sb.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A96032627EEB17F0031B164 /* rimouski sb.otf */; };
 		9A96032E27EEB17F0031B164 /* wheaton capitals.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A96032727EEB17F0031B164 /* wheaton capitals.otf */; };
+		9A96033027EF87CD0031B164 /* WallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96032F27EF87CD0031B164 /* WallNode.swift */; };
+		9A96033227EF87D40031B164 /* SideNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033127EF87D40031B164 /* SideNode.swift */; };
+		9A96033527EF89360031B164 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033427EF89360031B164 /* Types.swift */; };
 		9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340A327E4F634007AF6CD /* AppDelegate.swift */; };
 		9AD340A627E4F634007AF6CD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A527E4F634007AF6CD /* GameScene.sks */; };
 		9AD340A827E4F634007AF6CD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A727E4F634007AF6CD /* Actions.sks */; };
@@ -35,6 +38,9 @@
 		9A96032427EEB17F0031B164 /* score.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = score.wav; sourceTree = "<group>"; };
 		9A96032627EEB17F0031B164 /* rimouski sb.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "rimouski sb.otf"; sourceTree = "<group>"; };
 		9A96032727EEB17F0031B164 /* wheaton capitals.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wheaton capitals.otf"; sourceTree = "<group>"; };
+		9A96032F27EF87CD0031B164 /* WallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNode.swift; sourceTree = "<group>"; };
+		9A96033127EF87D40031B164 /* SideNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNode.swift; sourceTree = "<group>"; };
+		9A96033427EF89360031B164 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		9AD340A027E4F634007AF6CD /* Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD340A327E4F634007AF6CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD340A527E4F634007AF6CD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -88,6 +94,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		9A96033327EF88F40031B164 /* MyUtils */ = {
+			isa = PBXGroup;
+			children = (
+				9A96033427EF89360031B164 /* Types.swift */,
+			);
+			path = MyUtils;
+			sourceTree = "<group>";
+		};
 		9AD3409727E4F634007AF6CD = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +124,7 @@
 				9AD340BA27E4F65F007AF6CD /* Delegates */,
 				9AD340A527E4F634007AF6CD /* GameScene.sks */,
 				9AD340A727E4F634007AF6CD /* Actions.sks */,
+				9A96033327EF88F40031B164 /* MyUtils */,
 				9A96030427ED502D0031B164 /* Extensions */,
 				9AD340D027E6548A007AF6CD /* Nodes */,
 				9AD340BB27E4F66F007AF6CD /* Scenes */,
@@ -168,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				9AD340D127E654B2007AF6CD /* PlayerNode.swift */,
+				9A96032F27EF87CD0031B164 /* WallNode.swift */,
+				9A96033127EF87D40031B164 /* SideNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -255,8 +272,11 @@
 				9AD340AA27E4F634007AF6CD /* GameScene.swift in Sources */,
 				9AD340AC27E4F634007AF6CD /* GameViewController.swift in Sources */,
 				9A96030627ED50560031B164 /* UIColor+Ext.swift in Sources */,
+				9A96033527EF89360031B164 /* Types.swift in Sources */,
 				9AD340D227E654B2007AF6CD /* PlayerNode.swift in Sources */,
 				9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */,
+				9A96033027EF87CD0031B164 /* WallNode.swift in Sources */,
+				9A96033227EF87D40031B164 /* SideNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

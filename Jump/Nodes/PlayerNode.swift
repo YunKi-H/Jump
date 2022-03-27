@@ -47,9 +47,9 @@ extension PlayerNode {
         player.physicsBody?.restitution = 0.0
         player.physicsBody?.friction = 10.0
         player.physicsBody?.mass = 10.0
-        player.physicsBody?.categoryBitMask = 0
-        player.physicsBody?.contactTestBitMask = 0
-        player.physicsBody?.collisionBitMask = 0
+        player.physicsBody?.categoryBitMask = PhysicsCategories.Player
+        player.physicsBody?.contactTestBitMask = PhysicsCategories.Wall | PhysicsCategories.Side | PhysicsCategories.Obstacles
+        player.physicsBody?.collisionBitMask = PhysicsCategories.Side
         addChild(player)
     }
     
@@ -60,5 +60,14 @@ extension PlayerNode {
     internal func jump(_ right: Bool) {
         let velocity = CGVector(dx: right ? -200 : 200, dy: 1000.0)
         player.physicsBody?.velocity = velocity
+    }
+    
+    internal func over() {
+        player.fillColor = .red
+        activate(false)
+    }
+    
+    internal func side() {
+        player.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 50.0))
     }
 }
