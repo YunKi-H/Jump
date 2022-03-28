@@ -48,7 +48,7 @@ extension PlayerNode {
         player.physicsBody?.friction = 10.0
         player.physicsBody?.mass = 10.0
         player.physicsBody?.categoryBitMask = PhysicsCategories.Player
-        player.physicsBody?.contactTestBitMask = PhysicsCategories.Wall | PhysicsCategories.Side | PhysicsCategories.Obstacles
+        player.physicsBody?.contactTestBitMask = PhysicsCategories.Wall | PhysicsCategories.Side | PhysicsCategories.Obstacles | PhysicsCategories.Score
         player.physicsBody?.collisionBitMask = PhysicsCategories.Side
         addChild(player)
     }
@@ -69,5 +69,9 @@ extension PlayerNode {
     
     internal func side() {
         player.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 50.0))
+    }
+    
+    internal func height() -> CGFloat {
+        return player.position.y + screenHeight / 2 * 0.75
     }
 }

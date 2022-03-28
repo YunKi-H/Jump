@@ -23,6 +23,7 @@ class GameScene: SKScene {
     private var firstTap = true
     private var posY: CGFloat = 0.0
     private var pairNum = 0
+    private var score = 0
     
     //MARK: - Lifecycle
     override func didMove(to view: SKView) {
@@ -46,6 +47,20 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if -playerNode.height() + frame.midY < worldNode.position.y {
+            worldNode.position.y = -playerNode.height() + frame.midY
+        }
+        
+        if posY - playerNode.height() < frame.midY {
+            addObstackes()
+        }
+        
+        obstaclesNode.children.forEach {
+            let i = score - 2
+            if $0.name == "Pair\(i)" {
+                $0.removeFromParent()
+            }
+        }
     }
 }
 
@@ -72,6 +87,7 @@ extension GameScene {
         
         //TODO: - ObstaclesNode
         worldNode.addChild(obstaclesNode)
+        posY = frame.midY
     }
     
     private func setupPhysics() {
@@ -113,9 +129,11 @@ extension GameScene {
     
     private func addObstackes() {
         let pipePair = SKNode()
-        pipePair.position = CGPoint(x: 0.0, y: frame.midY)
+        pipePair.position = CGPoint(x: 0.0, y: posY)
         pipePair.zPosition = 1.0
-        pipePair.name = "Pair"
+        
+        pairNum += 1
+        pipePair.name = "Pair\(pairNum)"
         
         let size = CGSize(width: screenWidth, height: 50.0)
         let pipe_1 = SKSpriteNode(color: .black, size: size)
@@ -130,10 +148,18 @@ extension GameScene {
         pipe_2.physicsBody?.isDynamic = false
         pipe_2.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
         
+        let score = SKNode()
+        score.position = CGPoint(x: 0.0, y: size.height)
+        score.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 2, height: size.height))
+        score.physicsBody?.isDynamic = false
+        score.physicsBody?.categoryBitMask = PhysicsCategories.Score
+        
         pipePair.addChild(pipe_1)
         pipePair.addChild(pipe_2)
+        pipePair.addChild(score)
         
         obstaclesNode.addChild(pipePair)
+        posY += frame.midY * 0.7
     }
 }
 
@@ -158,6 +184,11 @@ extension GameScene: SKPhysicsContactDelegate {
             playerNode.side()
         case PhysicsCategories.Obstacles:
             gameOver()
+        case PhysicsCategories.Score:
+            if let node = body.node {
+                score += 1
+                node.removeFromParent()
+            }
         default: break
         }
     }

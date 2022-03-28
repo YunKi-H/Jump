@@ -34,5 +34,6 @@ struct PhysicsCategories {
     static let Wall:        UInt32 = 0b10
     static let Side:        UInt32 = 0b100
     static let Obstacles:   UInt32 = 0b1000
+    static let Score:       UInt32 = 0b10000
     
 }
