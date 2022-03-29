@@ -11,8 +11,6 @@ class SideNode: SKNode {
     
     //MARK: - Properties
     private var node: SKSpriteNode!
-    private var diff = 0
-    private let radius: CGFloat = 30.0
     
     //MARK: - Initializes
     override init() {

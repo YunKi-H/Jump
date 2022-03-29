@@ -35,5 +35,10 @@ struct PhysicsCategories {
     static let Side:        UInt32 = 0b100
     static let Obstacles:   UInt32 = 0b1000
     static let Score:       UInt32 = 0b10000
-    
+    static let SuperScore:  UInt32 = 0b100000
+}
+
+struct FontName {
+    static let rimouski = "Rimouski"
+    static let wheaton = "Wheaton"
 }

@@ -13,6 +13,7 @@ class GameScene: SKScene {
     //MARK: - Properties
     private let worldNode = SKNode()
     private var bgNode: SKSpriteNode!
+    private var hudNode = HUDNode()
     
     private let playerNode = PlayerNode(diff: 0)
     private let wallNode = WallNode()
@@ -24,6 +25,10 @@ class GameScene: SKScene {
     private var posY: CGFloat = 0.0
     private var pairNum = 0
     private var score = 0
+    
+    private let easeScoreKey = "EaseScoreKey"
+    
+    private let requestScore = 50
     
     //MARK: - Lifecycle
     override func didMove(to view: SKView) {
@@ -40,7 +45,7 @@ class GameScene: SKScene {
         }
         
         let location = touch.location(in: self)
-        let right = !(location.x > frame.width / 2)
+        let right = (location.x > frame.width / 2)
         
         playerNode.jump(right)
     }
@@ -74,6 +79,11 @@ extension GameScene {
         
         //TODO: - BackgroundNode
         addBG()
+        
+        //TODO: - HUDNode
+        addChild(hudNode)
+        hudNode.skView = view
+        hudNode.easeScene = self
         
         //TODO: - WorldNode
         addChild(worldNode)
@@ -128,6 +138,8 @@ extension GameScene {
 extension GameScene {
     
     private func addObstackes() {
+        let randomX = CGFloat(arc4random() % UInt32(playableRect.width / 2))
+        
         let pipePair = SKNode()
         pipePair.position = CGPoint(x: 0.0, y: posY)
         pipePair.zPosition = 1.0
@@ -137,7 +149,7 @@ extension GameScene {
         
         let size = CGSize(width: screenWidth, height: 50.0)
         let pipe_1 = SKSpriteNode(color: .black, size: size)
-        pipe_1.position = CGPoint(x: -250, y: 0.0)
+        pipe_1.position = CGPoint(x: randomX - 250, y: 0.0)
         pipe_1.physicsBody = SKPhysicsBody(rectangleOf: size)
         pipe_1.physicsBody?.isDynamic = false
         pipe_1.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
@@ -159,14 +171,44 @@ extension GameScene {
         pipePair.addChild(score)
         
         obstaclesNode.addChild(pipePair)
+        
+        switch arc4random_uniform(100) {
+        case 0...80: break
+        default: addSuperScore()
+        }
+        
         posY += frame.midY * 0.7
     }
+    
+    private func addSuperScore() {
+        let node = SuperScoreNode()
+        let randomX = playableRect.midX + CGFloat(arc4random_uniform(UInt32(playableRect.width / 2))) + node.frame.width
+        let randomY = posY + CGFloat(arc4random_uniform(UInt32(posY * 0.5))) + node.frame.height
+        node.position = CGPoint(x: randomX, y: randomY)
+        
+        worldNode.addChild(node)
+        node.bounce()
+    }
 }
+
+//MARK: - GameState
 
 extension GameScene {
     
     private func gameOver() {
         playerNode.over()
+        
+        var highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+        if score > highscore {
+            highscore = score
+        }
+        hudNode.setupGameOver(score, highscore)
+    }
+    
+    private func success() {
+        if score >= requestScore {
+            playerNode.activate(false)
+        }
     }
 }
 
@@ -187,7 +229,28 @@ extension GameScene: SKPhysicsContactDelegate {
         case PhysicsCategories.Score:
             if let node = body.node {
                 score += 1
+                hudNode.updateScore(score)
+                
+                let highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+                if score > highscore {
+                    UserDefaults.standard.set(score, forKey: easeScoreKey)
+                }
+                
                 node.removeFromParent()
+                success()
+            }
+        case PhysicsCategories.SuperScore:
+            if let node = body.node {
+                score += 5
+                hudNode.updateScore(score)
+                
+                let highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+                if score > highscore {
+                    UserDefaults.standard.set(score, forKey: easeScoreKey)
+                }
+                
+                node.removeFromParent()
+                success()
             }
         default: break
         }
