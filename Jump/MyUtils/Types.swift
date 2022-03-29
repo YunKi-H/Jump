@@ -42,3 +42,11 @@ struct FontName {
     static let rimouski = "Rimouski"
     static let wheaton = "Wheaton"
 }
+
+struct SoundName {
+    static let superScore = "superScore.wav"
+    static let jump = "jump.wav"
+    static let btn = "btn.wav"
+    static let score = "score.wav"
+    static let collision = "collision.wav"
+}

@@ -58,7 +58,7 @@ extension PlayerNode {
     }
     
     internal func jump(_ right: Bool) {
-        let velocity = CGVector(dx: right ? -200 : 200, dy: 1000.0)
+        let velocity = CGVector(dx: right ? 200 : -200, dy: 1000.0)
         player.physicsBody?.velocity = velocity
     }
     

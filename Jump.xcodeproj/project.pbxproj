@@ -20,10 +20,13 @@
 		9A96033527EF89360031B164 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033427EF89360031B164 /* Types.swift */; };
 		9A96033727F230470031B164 /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033627F230470031B164 /* HUDNode.swift */; };
 		9A96033927F25E230031B164 /* SuperScoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033827F25E230031B164 /* SuperScoreNode.swift */; };
+		9A96033B27F396BE0031B164 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033A27F396BE0031B164 /* ColorModel.swift */; };
+		9A96033D27F39B5B0031B164 /* MediumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033C27F39B5B0031B164 /* MediumScene.swift */; };
+		9A96033F27F3A00B0031B164 /* HardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96033E27F3A00B0031B164 /* HardScene.swift */; };
 		9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340A327E4F634007AF6CD /* AppDelegate.swift */; };
 		9AD340A627E4F634007AF6CD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A527E4F634007AF6CD /* GameScene.sks */; };
 		9AD340A827E4F634007AF6CD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340A727E4F634007AF6CD /* Actions.sks */; };
-		9AD340AA27E4F634007AF6CD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340A927E4F634007AF6CD /* GameScene.swift */; };
+		9AD340AA27E4F634007AF6CD /* EaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340A927E4F634007AF6CD /* EaseScene.swift */; };
 		9AD340AC27E4F634007AF6CD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD340AB27E4F634007AF6CD /* GameViewController.swift */; };
 		9AD340AF27E4F634007AF6CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340AD27E4F634007AF6CD /* Main.storyboard */; };
 		9AD340B127E4F635007AF6CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AD340B027E4F635007AF6CD /* Assets.xcassets */; };
@@ -45,11 +48,14 @@
 		9A96033427EF89360031B164 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		9A96033627F230470031B164 /* HUDNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
 		9A96033827F25E230031B164 /* SuperScoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperScoreNode.swift; sourceTree = "<group>"; };
+		9A96033A27F396BE0031B164 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		9A96033C27F39B5B0031B164 /* MediumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScene.swift; sourceTree = "<group>"; };
+		9A96033E27F3A00B0031B164 /* HardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardScene.swift; sourceTree = "<group>"; };
 		9AD340A027E4F634007AF6CD /* Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD340A327E4F634007AF6CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD340A527E4F634007AF6CD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		9AD340A727E4F634007AF6CD /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		9AD340A927E4F634007AF6CD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9AD340A927E4F634007AF6CD /* EaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseScene.swift; sourceTree = "<group>"; };
 		9AD340AB27E4F634007AF6CD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9AD340AE27E4F634007AF6CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AD340B027E4F635007AF6CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9A96033427EF89360031B164 /* Types.swift */,
+				9A96033A27F396BE0031B164 /* ColorModel.swift */,
 			);
 			path = MyUtils;
 			sourceTree = "<group>";
@@ -150,7 +157,9 @@
 		9AD340BB27E4F66F007AF6CD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9AD340A927E4F634007AF6CD /* GameScene.swift */,
+				9AD340A927E4F634007AF6CD /* EaseScene.swift */,
+				9A96033C27F39B5B0031B164 /* MediumScene.swift */,
+				9A96033E27F3A00B0031B164 /* HardScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -275,15 +284,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD340AA27E4F634007AF6CD /* GameScene.swift in Sources */,
+				9AD340AA27E4F634007AF6CD /* EaseScene.swift in Sources */,
 				9AD340AC27E4F634007AF6CD /* GameViewController.swift in Sources */,
 				9A96030627ED50560031B164 /* UIColor+Ext.swift in Sources */,
 				9A96033527EF89360031B164 /* Types.swift in Sources */,
 				9AD340D227E654B2007AF6CD /* PlayerNode.swift in Sources */,
 				9AD340A427E4F634007AF6CD /* AppDelegate.swift in Sources */,
 				9A96033027EF87CD0031B164 /* WallNode.swift in Sources */,
+				9A96033D27F39B5B0031B164 /* MediumScene.swift in Sources */,
 				9A96033727F230470031B164 /* HUDNode.swift in Sources */,
 				9A96033927F25E230031B164 /* SuperScoreNode.swift in Sources */,
+				9A96033B27F396BE0031B164 /* ColorModel.swift in Sources */,
+				9A96033F27F3A00B0031B164 /* HardScene.swift in Sources */,
 				9A96033227EF87D40031B164 /* SideNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
